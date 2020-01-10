@@ -166,6 +166,8 @@ function _via_util_load_text_file(text_file, callback_function) {
     text_reader.addEventListener( 'load', function() {
       callback_function(text_reader.result);
     }, false);
+    console.log("_via_util_load_text_file, text_reader.result ");
+    console.log(text_reader.result);
     text_reader.readAsText(text_file, 'utf-8');
   }
 }
@@ -225,7 +227,6 @@ function _via_util_download_as_file(data, filename) {
 }
 
 function _via_util_file_select_local(type, handler, multiple) {
-  // alert();
   var fsel = document.createElement('input');
   fsel.setAttribute('type', 'file');
   fsel.setAttribute('name', 'files[]');
@@ -257,7 +258,8 @@ function _via_util_file_select_local(type, handler, multiple) {
     fsel.accept = 'video/*,audio/*,image/*';
     break;
   }
-
+  console.log("_via_util_file_select_local, handler ");
+  console.log(handler);
   fsel.onchange = handler;
   fsel.click();
 }
@@ -589,34 +591,3 @@ function _via_util_merge_three_way_str(ancestor, version1, version2) {
 }
 
 
-function _via_util_load_data(callback_function){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {     
-      
-      callback_function(this.responseText);
-    }
-  };
-  // url for getting data from backend.
-  var uri = 'http://localhost/via-src-3.0.6/data1.json';
-  xhttp.open("GET", uri, true);
-  xhttp.send();  
-}
-
-function _via_util_save_data(data) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      alert("Saved successfully!")
-    }
-    else{
-      alert("Failed!")
-    }
-  };
-  // url for saving data on backend.
-  var uri = "http://localhost/via-src-3.0.6/ajax.php";
-  xhttp.open("POST", uri, true);
-  xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.send(data);
-  
-}
