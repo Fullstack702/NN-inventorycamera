@@ -5,6 +5,7 @@ $password = "Safe4Inventocam";
 $dbname = "inventocam";
 $uploads_dir = '/home/projects/image_upload';
 $image_path = '/images';
+$objects_path = '/home/projects/object_images';
 $image_preview_width=1000;
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection

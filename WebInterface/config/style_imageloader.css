@@ -16,7 +16,7 @@ label.h2 {
 	font-Family: "Arial", sans-serif;
     font-weight: bold;
     font-size: 3em;
-    width: 100%;
+    width: 90%;
     margin-bottom: 1em;
     padding:1em;
 }
@@ -24,7 +24,7 @@ label.formlabel {
 	font-Family: "Arial", sans-serif;
     font-weight: bold;
     font-size: 2em;
-    width: 100%;
+    width: 90%;
     margin-bottom: 1em;
     padding:1em;
 }
@@ -103,12 +103,12 @@ div.section{
 	border: 1px solid #000;
 	margin:0.6em;
 	padding:1em;
-	/*overflow:auto;*/
+	overflow:auto;
 	background-color:#f0f0f0;
 }
 
 .full{
-	width:95%;
+	width:90%;
 	margin:1%;
 	overflow:auto;
 }
@@ -118,7 +118,7 @@ div.section{
 	padding:0.6em;
 }
 .third{
-	width:26%;
+	width:30%;
 	margin:1%;
 	float:left;
 	padding:0.6em;
@@ -135,4 +135,27 @@ div.section{
 }
 .thumbnail{
 	width:100%;
+}
+
+div.third p > a{
+	width: 100%;
+    display: block;
+    word-wrap: break-word;
+    /* text-overflow: ellipsis; */
+    overflow: hidden
+}
+
+div#via_control_panel_container select{
+	border-radius:5px !important; 
+	padding:5px !important;
+}
+
+#menu_ignore_btn:hover{
+	background-color: #e1e1e1 !important;
+	color:black !important;
+}
+
+#image_id_label::before{
+	content:'Image ID:';
+	color:black;
 }

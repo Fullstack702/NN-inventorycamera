@@ -52,6 +52,8 @@ if(isset($_POST['key'])){
 	}
 	$sql_update = "UPDATE `cameras` SET `GET_UPDATE`=0 WHERE `CAM_KEY`='$key_received'";
 	$conn->query($sql_update);
+	$sql_update = "UPDATE `cameras` SET `CAPTURE_ASAP`=0 WHERE `CAM_KEY`='$key_received'";
+	$conn->query($sql_update);
 	$sql_update = "UPDATE `cameras` SET `LAST_CONTACT`=NOW() WHERE `CAM_KEY`='$key_received'";
 	$conn->query($sql_update);
 }

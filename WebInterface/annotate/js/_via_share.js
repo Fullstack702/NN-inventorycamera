@@ -164,7 +164,8 @@ _via_share.prototype._project_pull = function(pid) {
     xhr.addEventListener('error', function(e) {
       err_callback('Error' )
     });
-    xhr.open('GET', this.conf['ENDPOINT'] + pid);
+//    xhr.open('GET', this.conf['ENDPOINT'] + pid);
+    xhr.open('GET', "https://inventocam.com/ui/annotate/get_project.php?pid="+pid);
     xhr.send();
   }.bind(this));
 }
